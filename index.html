@@ -22,23 +22,21 @@
   <body>
     <div class="container">
       <div class="header">
+        <img
+          class="bckg_image"
+          src="./images/bckg_image.jpg"
+          alt="background image"
+        />
+        <h1 class="title">To do List</h1>
         <div class="clear">
           <span class="fa icon-spinner"></span>
         </div>
-        <div id="date"></div>
-      </div>
-      <div class="content">
-        <ul id="list">
-          <li class="item">
-            <span class="fa icon-check-icon complete"></span>
-            <p class="text">Drink Coffe</p>
-            <span class="fa icon-bin delete"></span>
-          </li>
-        </ul>
-        <div class="add-item">
-          <i class="fa fa-plus-circle"></i>
-          <input type="text" id="input" placeholder="Add a to do" />
         </div>
+      </div>
+      <div id="wraper">
+        <div id="toDoHistory"></div>
+        <input type="text" name="msg" id="msg" />
+        <button id="sendButton">Button</button>
       </div>
     </div>
     <script src="./index.js"></script>

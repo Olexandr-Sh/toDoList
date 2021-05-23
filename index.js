@@ -1,34 +1,71 @@
-// class List {
-//   attachTask() {
-//     let toDoElementsBlock = document.getElementsByClassName(toDoElements);
-//     let newToDoBlock = this.createNewToDo();
-//     toDoElementsBlock.appendChild(newToDoBlock);
-//   }
-//   createNewToDo() {
-//     let newToDoBlock = document.createElement('div');
-//     newToDoBlock.classList.add('newTask');
+class ToDo {
+  constructor() {
+    let sendButton = document.getElementById('sendButton');
+    sendButton.addEventListener('click', () => {
+      this.sendMessage();
+    });
+  }
+
+  sendMessage() {
+    let messageHistoryBlock = document.getElementById('toDoHistory');
+    let inputElement = document.getElementById('msg');
+
+    let messageBlock = this.createMessageBlock({ text: inputElement.value });
+    messageHistoryBlock.appendChild(messageBlock);
+  }
+
+  getInputMessage() {
+    let inputElement = document.getElementById('msg');
+    let inputValue = inputElement.value;
+    inputElement.value = '';
+    return inputValue;
+  }
+
+  createMessageBlock(params) {
+    let messageBlock = document.createElement('div');
+    messageBlock.classList.add('message');
+
+    let messageDateBlock = this.createMessageDateBlock();
+    messageBlock.appendChild(messageDateBlock);
+
+    let checkBlock = this.createCheckBlock();
+    messageBlock.appendChild(checkBlock);
+
+    let messageTextBlock = this.createMessageTextBlock(params.text);
+    messageBlock.appendChild(messageTextBlock);
     
-//     let listDateBlock = this.createListDateBlock();
-//     listDateBlock.appendChild(createNewToDo);
-    
-//     return newToDoBlock;
-//   }
+    return messageBlock;
+  }
 
-//   createListDateBlock() {
-//     let listDateBlock = document.createElement('span');
-//     listDateBlock.classList.add('date');
-//     listDateBlock.textContent - '23.05.21';
+  createMessageDateBlock() {
+    let messageDateBlock = document.createElement('span');
+    messageDateBlock.classList.add('date');
+    messageDateBlock.textContent = '23.05.21';
 
-//     return listDateBlock;
-//   }
-// }
+    return messageDateBlock;
+  }
 
-// let list = new List();
+  createCheckBlock() {
+    let checkBlock = document.createElement('input');
+    // Як створити саме чекбокс інпут для відмітки виконаних завдань?
+    checkBlock.classList.add('checkIcon');
 
-let clear = document.querySelector('.clear');
+    return checkBlock;
+  }
 
-let dateElement = document.getElementById('date');
+  createMessageTextBlock(text) {
+    let messageTextBlock = document.createElement('p');
+    messageTextBlock.textContent = text;
 
-let list = document.getElementById('list');
+    return messageTextBlock;
+  }
+  deleteMessageBlock() {
+    let removeButton = document.getElementById('clear');
+    removeButton.addEventListener('click', () => {
+      createMessageBlock.remove();
+    });
+    return removeButton;
+  }
+}
 
-let input = document.getElementById('input');
+let chat = new ToDo();
