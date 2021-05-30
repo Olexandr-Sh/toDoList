@@ -19,7 +19,12 @@ img {
   width: 100%;
   max-width: 100%;
 }
-.container {
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-header {
   margin: 22px auto;
   width: 450px;
 }
@@ -32,7 +37,7 @@ img {
   padding-left: 50px;
 }
 }
-.bckg_image {
+.container-header-bckg_image {
   position: relative;
 }
 .clear {
@@ -43,6 +48,7 @@ img {
 }
 .fa {
   cursor: pointer;
+  font-size: 20px;
 }
 .fa:hover {
   color: white;
@@ -51,10 +57,9 @@ img {
 .fa:active {
   color: gray;
 }
-
-#wrapper {
-  margin: 22px auto;
-  width: 650px;
+.inner-wrapper {
+  width: 450px;
+  padding-bottom: 40px;
 }
 #toDoHistory {
   overflow: hidden;
@@ -67,17 +72,30 @@ img {
   padding: 2px 5px;
   line-height: 22px;
   border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 145px;
+  padding: 10px;
+  cursor: pointer;
+}
+.inner-wrapper-button {
+  background-color: rgb(49, 119, 250);
+  color: white;
+}
+.inner-wrapper-button:hover {
+  opacity: 0.8;
+}
+.inner-wrapper-button:active {
+  background-color: rgb(2, 184, 2);
+  color: white;
 }
 #msg {
   margin-right: 1px;
-  width: 86%;
+  width: 300px;
   text-indent: 5px;
   color: #5a5a5a;
-  /*border-right: none;*/
-}
-#sendButton {
-  width: 12%;
-  padding: 2px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }
 .message {
   padding: 7px 12px;

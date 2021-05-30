@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="./fonts/style.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
-  <body>
+  <body class="main-wrapper">
     <div class="container">
-      <div class="header">
+      <div class="container-header">
         <img
-          class="bckg_image"
+          class="container-header-bckg_image"
           src="./images/bckg_image.jpg"
           alt="background image"
         />
@@ -33,10 +33,12 @@
         </div>
         </div>
       </div>
-      <div id="wraper">
+      <div class="inner-wrapper" id="wraper">
         <div id="toDoHistory"></div>
         <input type="text" name="msg" id="msg" />
-        <button id="sendButton">Button</button>
+        <button class="inner-wrapper-button" id="sendButton">
+          <span class="icon-plus"></span> Add a to-do
+        </button>
       </div>
     </div>
     <script src="./index.js"></script>
